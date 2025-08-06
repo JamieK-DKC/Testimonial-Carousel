@@ -1,140 +1,32 @@
 <!DOCTYPE html>
-<!-- Declare this document as HTML5 -->
 <html lang="en">
+
 <head>
-  <!-- Character encoding for proper text rendering -->
   <meta charset="UTF-8">
-  <!-- Responsive viewport settings for mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Title displayed in browser tab -->
   <title>Testimonials Carousel</title>
-  <!-- Import Lato font from Google Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Reset default page margins and set base font */
-    html, body {
-      margin: 0;
-      padding: 0;
-      /* Allow page scrolling on mobile */
-      overflow-x: hidden;
-      font-family: 'Lato', sans-serif;
-      color: #000;
-    }
-    /* Carousel container: centers content and hides overflow horizontally */
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 1000px;
-      margin: auto;
-    }
-    /* Slides wrapper: flex layout for horizontal sliding and smooth transition */
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      touch-action: pan-y;
-    }
-    /* Individual slide: takes full width, with padding and centered text */
-    .slide {
-      flex: 0 0 100%;
-      box-sizing: border-box;
-      padding: 20px;
-      text-align: center;
-    }
-    /* Navigation buttons */
-    .nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.7);
-      border: none;
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      z-index: 1;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    /* Show nav on hover for desktop */
-    .carousel:hover .nav {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    /* Position left/right */
-    .nav.prev { left: 10px; }
-    .nav.next { right: 10px; }
-
-    /* Image styling */
-    .testimonial-photo {
-      width: 100%;
-      max-width: 250px;
-      height: auto;
-      border-radius: 0%;
-      object-fit: cover;
-      margin: 0 auto 10px;
-    }
-    /* Text styling */
-    .testimonial-text {
-      font-style: italic;
-      font-size: 16px;
-      line-height: 1.4;
-      margin-bottom: 10px;
-      padding: 0 10px;
-    }
-    .testimonial-name {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .testimonial-date {
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 15px;
-    }
-
-    /* Responsive for tablets and large phones */
-    @media (max-width: 768px) {
-      .slide { padding: 15px; }
-      .testimonial-photo { max-width: 200px; }
-      .testimonial-text { font-size: 14px; padding: 0 8px; }
-      .testimonial-name { font-size: 14px; }
-      .testimonial-date { font-size: 12px; }
-    }
-    /* Responsive for small phones: always show nav and adjust layout */
-    @media (max-width: 480px) {
-      .nav {
-        opacity: 1;
-        pointer-events: auto;
-        font-size: 1.5rem;
-        padding: 0.8rem;
-      }
-      .slide { padding: 10px; }
-      .testimonial-text { font-size: 13px; padding: 0 5px; }
-      .testimonial-name { font-size: 13px; }
-      .testimonial-date { font-size: 11px; }
-    }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <!-- Carousel with nav buttons and slide container -->
   <div class="carousel">
     <button class="nav prev" aria-label="Previous testimonial">‹</button>
     <div class="slides">
-      <!-- Slide 1 -->
       <div class="slide">
         <img src="https://lh6.googleusercontent.com/Ri_nsSb3C_2ShiLRU4dS62CnWu6WXl3DeuTC8KVaMX-nIHRj457tk6euhG0Z4SJ5LoSXAGrhQIjQiwLoEGgYMMA" alt="HVPS" class="testimonial-photo">
         <p class="testimonial-text">“A trusted friend and colleague who I am sure will be willing to assist with your project should he have the availability”</p>
         <p class="testimonial-name">Paul Birch, Director HVPS (SW)</p>
         <p class="testimonial-date">March 12, 2025</p>
       </div>
-      <!-- Slide 2 -->
       <div class="slide">
         <img src="https://lh5.googleusercontent.com/Ovd8aNabjdjrHR4Dwy2lJe5ScXTtR1i4IIvKsMIqkRAenuMw9HNRFleg0Fd4w2i5vBYYIZUMZpKuPRXqhUYpufk" alt="MEC" class="testimonial-photo">
         <p class="testimonial-text">“We have had the pleasure of working alongside DKC on several projects within the healthcare and MOD sectors. DKC has consistently demonstrated a high level of professionalism and expertise. Their communication has been clear and effective, ensuring excellent coordination when working with multiple stakeholders. They have reliably delivered designs on time while meeting project expectations with a strong attention to detail, contributing to the successful execution of complex projects. We would not hesitate to recommend DKC for future projects and look forward to working with them again.”</p>
         <p class="testimonial-name">Brendon Houghton, Director MEC</p>
         <p class="testimonial-date">April 20, 2025</p>
       </div>
-      <!-- Slide 3 -->
       <div class="slide">
         <img src="https://lh3.googleusercontent.com/LuWwsjOaLyY0jp_s0fvWWtHZPEPzuMdlLe4HV67JP8YXhyDmoyV7kH-PjDI2MuDiJ-aItQjJQJQgmEd-lc-5g08" alt="Unilec" class="testimonial-photo">
         <p class="testimonial-text">“Looks absolutely fantastic, your drawings are amazing—I’ve never seen so much detail!”</p>
@@ -144,61 +36,9 @@
     </div>
     <button class="nav next" aria-label="Next testimonial">›</button>
   </div>
-  <script>
-    parent.document.getElementsByTagName("iframe")[0].scrolling = "no";
-    // DOMContentLoaded ensures elements are ready
-    document.addEventListener('DOMContentLoaded', function() {
-      const slidesContainer = document.querySelector('.slides');
-      const slides = document.querySelectorAll('.slide');
-      const prevBtn = document.querySelector('.nav.prev');
-      const nextBtn = document.querySelector('.nav.next');
-      let current = 0;
-      let startX = 0;
-      let isDragging = false;
 
-      const updatePosition = () => {
-        slidesContainer.style.transform = `translateX(-${current * 100}%)`;
-      };
-      updatePosition();
-
-      // Auto-rotate slides every 10 seconds
-      setInterval(() => {
-        current = (current + 1) % slides.length;
-        updatePosition();
-      }, 10000);
-
-      // Button event listeners
-      prevBtn.addEventListener('click', () => {
-        current = (current - 1 + slides.length) % slides.length;
-        updatePosition();
-      });
-      nextBtn.addEventListener('click', () => {
-        current = (current + 1) % slides.length;
-        updatePosition();
-      });
-
-      // Touch support for swipe
-      slidesContainer.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-      });
-      slidesContainer.addEventListener('touchmove', e => {
-        if (!isDragging) return;
-        const diff = e.touches[0].clientX - startX;
-        slidesContainer.style.transform = `translateX(${-current * 100 + diff / window.innerWidth * 100}%)`;
-      });
-      slidesContainer.addEventListener('touchend', e => {
-        isDragging = false;
-        const endX = e.changedTouches[0].clientX;
-        const diff = endX - startX;
-        if (diff > 50) {
-          current = (current - 1 + slides.length) % slides.length;
-        } else if (diff < -50) {
-          current = (current + 1) % slides.length;
-        }
-        updatePosition();
-      });
-    });
-  </script>
+  <!-- External JavaScript -->
+  <script src="scripts.js"></script>
 </body>
+
 </html>
