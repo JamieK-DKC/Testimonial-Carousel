@@ -1,4 +1,4 @@
-parent.document.getElementsByTagName("iframe")[0].scrolling = "no";
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const slidesContainer = document.querySelector('.slides');
